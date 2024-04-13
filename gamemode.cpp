@@ -3,7 +3,7 @@
 #include "game.cpp"
 #include "display.cpp"
 #include "ai.cpp"
-
+#include "scoreboard.cpp"
 using namespace std;
 
 #define SIZE 9
@@ -58,7 +58,7 @@ int playerVsPlayer()
 
     cout << "Game over!" << endl;
     displayBoard(board);
-
+    add_point(winner(board));
     if (winner(board) == 'X')
     {
         cout << "X wins!" << endl;
@@ -133,7 +133,7 @@ int playerVsAi()
         displayBoard(board);
         cout << '\n';
     }
-
+    add_point(winner(board));
     if(winner(board) == 'X') 
     {
         cout << "X wins!" << endl;
